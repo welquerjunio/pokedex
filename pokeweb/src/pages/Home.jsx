@@ -7,7 +7,6 @@ import PokemonCard from "../componets/PokemonCard";
 import { Skeletons } from "../componets/Skeletons";
 
 export const Home = () => {
-
         const [pokemons, setPokemons] = useState([]);
 
         useEffect(() => {
@@ -21,8 +20,6 @@ export const Home = () => {
 
             }
             axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
-          
-        
         };
 
     const pokemonFilter = (name) => {
@@ -41,9 +38,8 @@ export const Home = () => {
     return(
         <div>
             <Navbar pokemonFilter={pokemonFilter}/>
-
-            <Container maxWidth="false">
-                <Grid container spacing={3}>
+                <Container maxWidth="false">
+                 <Grid container spacing={3}>
                     {pokemons.length === 0 ? (
                     <Skeletons /> 
                     ) : (
@@ -55,7 +51,6 @@ export const Home = () => {
                    )}                      
                 </Grid>
             </Container>
-
         </div>
     )
 }

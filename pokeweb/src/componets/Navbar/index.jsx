@@ -38,7 +38,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -58,8 +57,6 @@ export default function Navbar({pokemonFilter}) {
         <Toolbar>
           <Box display="flex" justifyContent="space-between" width="100%">
         <Box component="img" src="/assets/pokemon-logo.png" height="3em"/>
-
-        
           <Search onChange={(e) => pokemonFilter(e.target.value)}>
             <SearchIconWrapper>
               <SearchIcon />
